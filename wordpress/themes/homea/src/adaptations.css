@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Adaptations WordPress — propres au thème, absentes de la maquette.
+   Les composants gardent les classes de la maquette (posées via className) ;
+   ce bloc ne fait que neutraliser ce que les blocs natifs ajoutent.
+   ========================================================================== */
+
+/* Espacement automatique : coupé dans theme.json (blockGap 0px), et ici en
+   filet de sécurité À SPÉCIFICITÉ NULLE, pour ne jamais écraser les marges
+   des composants. */
+:where(.wp-block-group) > :where(*),
+:where(.wp-block-buttons) { margin-block: 0; }
+:where(figure.wp-block-image) { margin: 0; }
+:where(.wp-site-blocks) > :where(*) { margin-block: 0; }
+:where(.wp-block-post-content) > :where(*) { margin-block: 0; }
+
+/* Boutons : le conteneur core/button reste neutre, le lien porte le style */
+.wp-block-buttons.boutons { display: flex; }
+.wp-block-button.bouton { display: inline-block; padding: 0; background: none; border: 0; }
+.bouton > .wp-block-button__link { height: auto; text-align: left; word-break: normal; border-radius: 0; }
+
+/* Navigation (core/navigation) habillée comme le menu de la maquette.
+   WordPress recopie la classe « menu » sur la liste interne : on la neutralise. */
+nav.wp-block-navigation.menu { flex: 0 1 auto; }
+ul.wp-block-navigation__container.menu {
+  position: static;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  font-size: inherit;
+  gap: clamp(22px, 3.2vw, 50px);
+}
+.wp-block-navigation.menu .wp-block-navigation-item__content {
+  position: relative;
+  color: var(--doux);
+  text-decoration: none;
+  padding-block: 8px;
+  transition: color .2s ease;
+}
+.wp-block-navigation.menu .wp-block-navigation-item__content:hover,
+.wp-block-navigation.menu .current-menu-item > .wp-block-navigation-item__content { color: var(--titre); }
+.wp-block-navigation.menu .current-menu-item > .wp-block-navigation-item__content::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: var(--titre);
+}
+.wp-block-navigation.menu .wp-block-navigation__responsive-container-open,
+.wp-block-navigation.menu .wp-block-navigation__responsive-container-close { color: var(--titre); }
+.wp-block-navigation.menu .wp-block-navigation__responsive-container-open svg { width: 30px; height: 30px; }
+/* panneau mobile : sans ceci il s'ouvre blanc (le CSS du bloc est imprimé après) */
+.wp-block-navigation.menu .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: var(--fond) !important;
+  color: var(--titre) !important;
+  padding: 28px var(--gouttiere) !important;
+}
+.wp-block-navigation.menu .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+  gap: 18px;
+  font-family: var(--serif-titre);
+  font-size: 34px;
+  letter-spacing: -0.01em;
+}
+.wp-block-navigation.menu .is-menu-open .wp-block-navigation-item__content { color: var(--titre); padding-block: 4px; }
+.wp-block-navigation.menu .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content,
+.wp-block-navigation.menu .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container { align-items: flex-start; }
+.wp-block-navigation.menu .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content { padding-top: 48px; }
+
+/* Les citations n'héritent d'aucun style par défaut */
+.citation .wp-block-quote cite { font-size: 13px; }
+
+/* Page simple (articles, 404) */
+.page-simple { padding: clamp(48px, 6vw, 96px) var(--gouttiere) clamp(64px, 7vw, 110px); max-width: 1100px; }
+.page-simple .boutons { margin-top: 36px; }
+.page-simple .chapeau { margin-top: 24px; font-size: 21px; max-width: 30em; }
+.page-simple .titre-hero { margin-top: 28px; font-size: clamp(44px, 4.3vw, 64px); }
+.page-simple .wp-block-post-title + .wp-block-post-excerpt { margin: 12px 0 48px; }
+
+@media (max-width: 900px) {
+  /* le menu de la maquette se replie en panneau ; ici core/navigation s'en charge */
+  nav.wp-block-navigation.menu {
+    position: static;
+    display: flex;
+    margin: 0 0 0 auto;
+    padding: 0;
+    background: none;
+    border: 0;
+    font-size: inherit;
+  }
+}

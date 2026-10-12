@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Corrections propres à l'éditeur de blocs — chargée par add_editor_style().
+   Ne touche jamais au site : uniquement le canevas de Gutenberg.
+   Gutenberg impose « position: relative » à chaque bloc ; les couches que la
+   maquette sort du flux sont rétablies ici.
+   ========================================================================== */
+
+.editor-styles-wrapper { background: #F1E7DE; }
+
+/* Diaporama : les trois photos côte à côte, pour être remplacées une à une */
+.editor-styles-wrapper .hero-visuels {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  overflow: visible;
+}
+.editor-styles-wrapper .hero-visuels .diapo {
+  position: relative !important;
+  inset: auto !important;
+  opacity: 1 !important;
+  min-height: 320px;
+}
+.editor-styles-wrapper .hero-visuels .diapo img { transform: none !important; }
+
+/* Photo unique des héros de page : remplit sa colonne */
+.editor-styles-wrapper .hero-page .hero-visuels { display: block !important; }
+.editor-styles-wrapper .hero-page .hero-visuels .cadre { position: absolute !important; inset: 0 !important; }
+
+/* Les cadres photo gardent une hauteur dans le canevas */
+.editor-styles-wrapper .duo .duo-photo,
+.editor-styles-wrapper .triptyque figure,
+.editor-styles-wrapper .galerie figure { min-height: 260px; }
+
+/* Le menu reste lisible dans l'éditeur d'en-tête */
+.editor-styles-wrapper .entete-rangee { height: auto; min-height: var(--entete-h); }
+
+/* Le contenu des pages occupe toute la largeur, comme sur le site */
+.editor-styles-wrapper .is-root-container > .wp-block,
+.editor-styles-wrapper .wp-block-post-content > .wp-block {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.editor-styles-wrapper .hero-visuels { align-content: start; }
+.editor-styles-wrapper .hero-visuels .diapo img {
+  width: 100% !important;
+  height: 360px !important;
+  object-fit: cover;
+}

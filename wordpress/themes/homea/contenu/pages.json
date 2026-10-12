@@ -1,0 +1,27 @@
+[
+ {
+  "slug": "accueil",
+  "titre": "Accueil",
+  "description": "HOMËA, conciergerie attentive et sur-mesure en Loire-Atlantique : location saisonnière, accueil des voyageurs, intendance et entretien de votre maison, de Nantes à l’océan."
+ },
+ {
+  "slug": "nos-services",
+  "titre": "Nos services",
+  "description": "Location saisonnière, accueil des voyageurs, ménage et linge, intendance et entretien : les services de conciergerie HOMËA, à l’année ou ponctuellement, de Nantes à l’océan."
+ },
+ {
+  "slug": "nos-proprietes",
+  "titre": "Nos propriétés",
+  "description": "Découvrez les maisons confiées à HOMËA : des lieux de caractère, préparés avec soin, entre Nantes et l’océan."
+ },
+ {
+  "slug": "a-propos",
+  "titre": "À propos",
+  "description": "L’histoire de HOMËA : une conciergerie à taille humaine en Loire-Atlantique, son nom, son emblème et ses valeurs — l’humain, l’exigence, la sérénité et l’authenticité."
+ },
+ {
+  "slug": "contact",
+  "titre": "Contact",
+  "description": "Contactez HOMËA Conciergerie : réservez un créneau d’appel selon nos disponibilités ou écrivez-nous. De Nantes à La Baule, presqu’île guérandaise et Vendée."
+ }
+]

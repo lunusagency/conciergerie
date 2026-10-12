@@ -1,0 +1,97 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": false,
+    "layout": { "contentSize": "1200px", "wideSize": "1440px" },
+    "color": {
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "defaultDuotone": false,
+      "custom": true,
+      "palette": [
+        { "slug": "brun", "color": "#5B4231", "name": "Marron profond" },
+        { "slug": "brun-fonce", "color": "#4A3426", "name": "Marron foncé" },
+        { "slug": "titre", "color": "#46301F", "name": "Brun des titres" },
+        { "slug": "texte", "color": "#4A4038", "name": "Texte" },
+        { "slug": "taupe", "color": "#958574", "name": "Taupe" },
+        { "slug": "cognac", "color": "#9E7852", "name": "Marron cognac" },
+        { "slug": "filet", "color": "#D7CCC2", "name": "Filet" },
+        { "slug": "fond", "color": "#F1E7DE", "name": "Fond beige poudré" },
+        { "slug": "fond-clair", "color": "#F4EBE3", "name": "Fond clair" },
+        { "slug": "fond-sombre", "color": "#EADDD2", "name": "Fond soutenu" },
+        { "slug": "sable", "color": "#E7D4BD", "name": "Beige sable" },
+        { "slug": "lin", "color": "#DECBB6", "name": "Lin beige" },
+        { "slug": "ivoire", "color": "#F5EDE1", "name": "Ivoire poudré" }
+      ]
+    },
+    "typography": {
+      "fluid": false,
+      "defaultFontSizes": false,
+      "dropCap": false,
+      "fontFamilies": [
+        {
+          "slug": "serif",
+          "name": "Newsreader",
+          "fontFamily": "Newsreader, Georgia, 'Times New Roman', serif",
+          "fontFace": [
+            {
+              "fontFamily": "Newsreader",
+              "fontStyle": "normal",
+              "fontWeight": "400 500",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/fonts/newsreader.woff2" ]
+            }
+          ]
+        },
+        {
+          "slug": "sans",
+          "name": "Jost",
+          "fontFamily": "Jost, 'Helvetica Neue', Arial, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Jost",
+              "fontStyle": "normal",
+              "fontWeight": "400 500",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/fonts/jost.woff2" ]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        { "slug": "petit", "name": "Petit", "size": "15px" },
+        { "slug": "normal", "name": "Normal", "size": "18px" },
+        { "slug": "chapeau", "name": "Chapeau", "size": "21px" },
+        { "slug": "titre-3", "name": "Titre 3", "size": "28px" },
+        { "slug": "titre-2", "name": "Titre 2", "size": "clamp(38px, 3.65vw, 56px)" },
+        { "slug": "titre-1", "name": "Titre 1", "size": "clamp(50px, 5.45vw, 80px)" }
+      ]
+    },
+    "spacing": {
+      "blockGap": true,
+      "units": [ "px", "rem", "%", "vw" ]
+    },
+    "border": { "radius": true, "color": true, "style": true, "width": true }
+  },
+  "styles": {
+    "spacing": { "blockGap": "0px" },
+    "color": {
+      "background": "var(--wp--preset--color--fond)",
+      "text": "var(--wp--preset--color--texte)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--serif)",
+      "fontSize": "18px",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "link": { "color": { "text": "inherit" } }
+    }
+  },
+  "templateParts": [
+    { "name": "header", "title": "En-tête", "area": "header" },
+    { "name": "footer", "title": "Pied de page", "area": "footer" }
+  ]
+}

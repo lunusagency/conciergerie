@@ -1,0 +1,5 @@
+# accès Novamira (scripts/wp.sh) : ne jamais committer
+scripts/.mcp-sid
+*.mcpb
+bundle/
+.DS_Store

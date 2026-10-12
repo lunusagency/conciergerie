@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — HOMËA Conciergerie</title>
+<meta name="description" content="Contactez HOMËA Conciergerie : réservez un créneau d’appel selon nos disponibilités ou écrivez-nous. De Nantes à La Baule, presqu’île guérandaise et Vendée.">
+<link rel="icon" href="img/icone-homea.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/homea-contact.css">
+</head>
+<body>
+
+<header class="entete">
+  <div class="entete-rangee">
+    <p class="marque"><a href="index.html"><img src="img/logo-homea-brun.png" alt="HOMËA Conciergerie" width="540" height="180"></a></p>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Nos services</a>
+      <a href="proprietes.html">Nos propriétés</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html" class="actif" aria-current="page">Contact</a>
+    </nav>
+    <div class="boutons entete-cta"><a class="bouton bouton-entete" href="contact.html">Confier mon bien</a></div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero hero-page">
+    <div class="hero-texte">
+      <p class="surtitre">Contact</p>
+      <h1 class="titre-hero">Parlons de votre bien.</h1>
+      <p class="chapeau">Un projet de location, une maison à confier, un séjour à préparer ? Réservez un créneau d’appel ou écrivez-nous : Nina vous répond personnellement.</p>
+      <ul class="coordonnees">
+        <li><strong>E-mail</strong><a href="mailto:contact@homea-conciergerie.fr">contact@homea-conciergerie.fr</a></li>
+        <li><strong>Secteur</strong>De Nantes à La Baule, presqu’île guérandaise et Vendée</li>
+        <li><strong>Téléphone</strong>Sur rendez-vous, au créneau de votre choix</li>
+      </ul>
+    </div>
+    <div class="hero-visuels">
+      <figure class="cadre"><img src="img/cartes-presentoir.jpg" alt="Cartes de visite HOMËA dans la lumière du matin" width="1288" height="1388"></figure>
+    </div>
+  </section>
+
+  <section class="section-tete ancre" id="rendez-vous">
+    <div>
+      <p class="surtitre">Rendez-vous téléphonique</p>
+      <h2 class="titre-section">Choisissez votre créneau.</h2>
+    </div>
+    <p class="texte-courant">Sélectionnez un jour puis une heure parmi nos disponibilités : nous échangeons par téléphone à l’heure choisie, le temps de faire connaissance et de répondre à vos questions.</p>
+  </section>
+
+  <section class="section-rdv">
+<div class="homea-rdv" data-homea="rendez-vous" data-api="#demo">
+	<div class="homea-rdv-choix">
+		<div class="homea-etape">
+			<div class="homea-etape-tete">
+				<p class="homea-etiquette"><span class="homea-num">1</span>Choisissez un jour</p>
+				<p class="homea-defile"><button type="button" class="homea-fleche homea-prec" aria-label="Jours précédents"></button><button type="button" class="homea-fleche homea-suiv" aria-label="Jours suivants"></button></p>
+			</div>
+			<div class="homea-jours" role="group" aria-label="Jours disponibles"><p class="homea-info">Chargement des disponibilités…</p></div>
+		</div>
+		<div class="homea-etape">
+			<div class="homea-etape-tete">
+				<p class="homea-etiquette"><span class="homea-num">2</span>Choisissez une heure</p>
+			</div>
+			<div class="homea-heures" role="group" aria-label="Heures disponibles"><p class="homea-info">Sélectionnez d’abord un jour.</p></div>
+		</div>
+		<p class="homea-note">Échange d’environ 30 minutes, à l’heure de Paris. Une confirmation vous est envoyée par e-mail.</p>
+	</div>
+	<form class="homea-form homea-rdv-form" novalidate>
+		<div class="homea-etape-tete">
+			<p class="homea-etiquette"><span class="homea-num">3</span>Vos coordonnées</p>
+		</div>
+		<p class="homea-recap" aria-live="polite"><span class="homea-recap-titre">Votre créneau</span><span class="homea-recap-valeur">À choisir dans le calendrier</span></p>
+		<div class="homea-champs">
+			<label class="homea-champ homea-champ-large"><span>Prénom et nom *</span><input type="text" name="nom" required autocomplete="name"></label>
+			<label class="homea-champ"><span>Téléphone *</span><input type="tel" name="telephone" required autocomplete="tel" inputmode="tel"></label>
+			<label class="homea-champ"><span>E-mail *</span><input type="email" name="email" required autocomplete="email"></label>
+			<label class="homea-champ homea-champ-large"><span>Vous êtes</span><select name="profil"><option value="proprietaire">Propriétaire</option><option value="voyageur">Voyageur</option><option value="autre">Autre demande</option></select></label>
+			<label class="homea-champ homea-champ-large"><span>Objet de l’appel</span><textarea name="message" rows="3"></textarea></label>
+		</div>
+		<p class="homea-piege" aria-hidden="true"><label>Ne pas remplir <input type="text" name="site" tabindex="-1" autocomplete="off"></label></p>
+		<label class="homea-accord"><input type="checkbox" name="accord" required><span>J’accepte que ces informations soient utilisées pour organiser cet échange.</span></label>
+		<p class="homea-envoi"><button class="homea-bouton" type="submit">Confirmer le créneau</button></p>
+		<p class="homea-retour" role="status" aria-live="polite"></p>
+	</form>
+	<div class="homea-confirmation" hidden>
+		<p class="homea-etiquette">C’est noté</p>
+		<p class="homea-confirmation-titre">Votre rendez-vous est réservé.</p>
+		<p class="homea-confirmation-texte"></p>
+	</div>
+</div>
+
+  </section>
+
+  <section class="section-ecrire ancre" id="ecrire">
+    <div class="editorial-texte">
+      <p class="surtitre">Formulaire</p>
+      <h2 class="titre-section">Écrivez-nous.</h2>
+      <p class="texte-courant">Décrivez-nous votre bien ou votre projet en quelques lignes : nous revenons vers vous personnellement.</p>
+    </div>
+    <div>
+<form class="homea-form homea-contact" data-homea="contact" data-api="#demo" novalidate>
+	<div class="homea-champs">
+		<label class="homea-champ"><span>Prénom et nom *</span><input type="text" name="nom" required autocomplete="name"></label>
+		<label class="homea-champ"><span>E-mail *</span><input type="email" name="email" required autocomplete="email"></label>
+		<label class="homea-champ"><span>Téléphone</span><input type="tel" name="telephone" autocomplete="tel" inputmode="tel"></label>
+		<label class="homea-champ"><span>Vous êtes</span><select name="profil"><option value="proprietaire">Propriétaire</option><option value="voyageur">Voyageur</option><option value="autre">Autre demande</option></select></label>
+		<label class="homea-champ homea-champ-large"><span>Votre message *</span><textarea name="message" rows="5" required></textarea></label>
+	</div>
+	<p class="homea-piege" aria-hidden="true"><label>Ne pas remplir <input type="text" name="site" tabindex="-1" autocomplete="off"></label></p>
+	<label class="homea-accord"><input type="checkbox" name="accord" required><span>J’accepte que ces informations soient utilisées pour répondre à ma demande.</span></label>
+	<p class="homea-envoi"><button class="homea-bouton" type="submit">Envoyer le message</button></p>
+	<p class="homea-retour" role="status" aria-live="polite"></p>
+</form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="pied-haut">
+    <div class="pied-col">
+      <p class="pied-marque"><a href="index.html"><img src="img/logo-homea-ivoire.png" alt="HOMËA Conciergerie" width="540" height="180"></a></p>
+      <p class="pied-devise">L’art de prendre soin des lieux et de ceux qui les habitent.</p>
+    </div>
+    <div class="pied-col">
+      <p class="pied-titre">Navigation</p>
+      <ul class="pied-liste">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Nos services</a></li>
+        <li><a href="proprietes.html">Nos propriétés</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="pied-col">
+      <p class="pied-titre">Contact</p>
+      <p class="pied-texte"><a href="mailto:contact@homea-conciergerie.fr">contact@homea-conciergerie.fr</a></p>
+      <p class="pied-texte">De Nantes à La Baule, presqu’île guérandaise et Vendée.</p>
+    </div>
+    <div class="pied-col">
+      <p class="pied-titre">Rendez-vous</p>
+      <p class="pied-texte">Un créneau pour échanger de vive voix, selon nos disponibilités.</p>
+      <div class="boutons"><a class="bouton bouton-clair" href="contact.html#rendez-vous">Réserver un appel</a></div>
+    </div>
+  </div>
+  <div class="pied-bas">
+    <p>© 2026 HOMËA Conciergerie</p>
+    <p>Loire-Atlantique · Vendée</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>window.HomeaContact = { demo: true };</script>
+<script src="js/homea-contact.js"></script>
+</body>
+</html>
