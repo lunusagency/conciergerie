@@ -2,12 +2,30 @@
 # Déploie le thème et l'extension sur le site WordPress via Novamira
 # (méthode Claude to WordPress, phase 5), puis installe le contenu.
 #
-# Prérequis : l'extension Novamira active sur le site, et ses accès :
-#   export WP_API_URL=https://homea-conciergerie.fr/wp-json/mcp/novamira
+# Prérequis : l'extension Novamira active sur le site, et ses accès, au choix :
+#   ./scripts/deployer-novamira.sh chemin/vers/novamira-site.mcpb
+# ou
+#   export WP_API_URL=https://homea-conciergerie.com/wp-json/mcp/novamira
 #   export WP_API_USERNAME=...   WP_API_PASSWORD=...   (mot de passe d'application)
+#   ./scripts/deployer-novamira.sh
 # Ne jamais committer ces accès.
 set -e
+if [ -n "$1" ]; then
+  # lire les accès dans le bundle .mcpb (archive zip) sans les écrire sur disque
+  eval "$(python3 -I - "$1" <<'PY'
+import json, shlex, sys, zipfile
+env = json.loads(zipfile.ZipFile(sys.argv[1]).read('manifest.json'))['server']['mcp_config']['env']
+for k in ('WP_API_URL', 'WP_API_USERNAME', 'WP_API_PASSWORD'):
+    print('export %s=%s' % (k, shlex.quote(env[k])))
+PY
+)"
+fi
 cd "$(dirname "$0")/.."
+: "${WP_API_URL:?Accès Novamira manquants (bundle .mcpb ou variables WP_API_*)}"
+echo "Site : ${WP_API_URL%/wp-json/*}"
+if ! curl -s -o /dev/null --max-time 20 "${WP_API_URL%/wp-json/*}/"; then
+  echo "Le site ne répond pas depuis cette machine (accès réseau ?)."; exit 1
+fi
 ./scripts/empaqueter.sh > /dev/null
 W=./scripts/wp.sh
 

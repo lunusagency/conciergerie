@@ -41,14 +41,13 @@ L'installation importe les 15 visuels dans la médiathèque, crée les 5 pages, 
 
 ### Méthode automatique (Novamira)
 
-Avec l'extension Novamira active sur le site et ses accès (mot de passe d'application) :
+Avec l'extension Novamira active sur le site et son bundle de connexion `.mcpb` :
 
 ```bash
-export WP_API_URL=https://homea-conciergerie.fr/wp-json/mcp/novamira
-export WP_API_USERNAME=…
-export WP_API_PASSWORD=…
-./scripts/deployer-novamira.sh
+./scripts/deployer-novamira.sh chemin/vers/novamira-homea-conciergerie.com.mcpb
 ```
+
+La machine qui lance le script doit pouvoir joindre `homea-conciergerie.com`.
 
 Ne jamais committer ces accès.
 
