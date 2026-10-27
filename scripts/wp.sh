@@ -49,7 +49,7 @@ print(json.dumps({'jsonrpc':'2.0','id':2,'method':'tools/call','params':{
 OUT=$(appeler "$1" "${2:-{\}}")
 
 # une session expirée se rouvre toute seule
-if printf '%s' "$OUT" | grep -q 'Missing Mcp-Session-Id\|Invalid session'; then
+if printf '%s' "$OUT" | grep -q 'Missing Mcp-Session-Id\|Invalid session\|expired session'; then
   SID=$(ouvrir_session) || exit 1
   OUT=$(appeler "$1" "${2:-{\}}")
 fi
