@@ -56,7 +56,8 @@ fi
 
 # la réponse peut arriver en text/event-stream : lire la ligne "data:"
 printf '%s' "$OUT" | python3 -c "
-import json,sys
+import json,os,sys
+LIM = int(os.environ.get('WP_LIMITE', '5000'))
 raw = sys.stdin.read().strip()
 for ligne in raw.splitlines():
     if ligne.startswith('data:'):
@@ -70,7 +71,7 @@ if 'error' in d:
 for bloc in d.get('result', {}).get('content', []):
     t = bloc.get('text', '')
     try:
-        print(json.dumps(json.loads(t), ensure_ascii=False, indent=1)[:5000])
+        print(json.dumps(json.loads(t), ensure_ascii=False, indent=1)[:LIM])
     except Exception:
-        print(t[:5000])
+        print(t[:LIM])
 "

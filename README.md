@@ -103,6 +103,7 @@ Comme l'indique le brief (section 07), ces éléments sont rédigés au plus jus
 - **Prestations** : liste des services à l'année et ponctuels (page Nos services).
 - **Propriété** : « Villa des Oliviers » est un exemple. Nom, lieu, capacité (8 voyageurs, 4 chambres, 3 salles de bain), équipements et photos sont à remplacer par le vrai bien, avec l'accord du propriétaire.
 - **Photos** : les visuels viennent de la maquette de référence et des mockups de la marque (agrandis et retouchés : la baseline affiche « CONCIERGERIE » seule, comme retenu au brief). Les remplacer par de vraies photos se fait en un clic dans l'éditeur.
+- **Photo du port de Pornic** (accueil) : Kev22, licence CC BY-SA 4.0 (Wikimedia Commons), légèrement réchauffée ; le crédit est affiché en bas du pied de page, il doit y rester tant que la photo est utilisée.
 - **À propos** : le texte sur la naissance de la marque et la lecture du monogramme (deux arches, l'étoile de l'accueil).
 - **Horaires de rendez-vous** par défaut.
 - **Mentions légales** : obligatoires en France (raison sociale, SIRET, hébergeur, directeur de publication). Informations non fournies, page non créée.

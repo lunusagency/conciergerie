@@ -316,7 +316,7 @@ body::before {
   transition: transform 7s ease-out;
 }
 .hero-visuels .diapo.est-actif { opacity: 1; }
-.hero-visuels .diapo-3 img { object-position: 50% 62%; }
+.hero-visuels .diapo-3 img { object-position: 62% 50%; }
 .hero-visuels .diapo.est-actif img { transform: scale(1); }
 
 /* --------------------------------------------------------------------------
@@ -454,6 +454,7 @@ body::before {
 }
 .triptyque figure { position: relative; overflow: hidden; }
 .triptyque figure img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.triptyque figure:last-child img { object-position: 68% 50%; }
 
 /* seconde ombre de feuillage, plus discrète, sur le bas de la page */
 .territoire::before {
@@ -545,6 +546,8 @@ body::before {
   letter-spacing: 0.06em;
   color: var(--lin);
 }
+.pied-bas .pied-credit { flex-basis: 100%; font-size: 11px; letter-spacing: 0.04em; opacity: .7; }
+.pied-bas .pied-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 
 /* ==========================================================================
    Pages intérieures
@@ -778,6 +781,15 @@ main > .bandeau-appel:last-child { margin-bottom: 0; }
   color: var(--titre);
   max-width: 21em;
   text-wrap: balance;
+}
+.citation blockquote p.citation-texte {
+  margin-top: 24px;
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: var(--texte);
+  max-width: 34em;
 }
 .citation cite {
   display: block;

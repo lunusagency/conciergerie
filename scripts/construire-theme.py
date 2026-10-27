@@ -302,6 +302,9 @@ def construire_contenus():
     for f in os.listdir(os.path.join(T, 'patterns')):
         if f.startswith('section-'):
             os.remove(os.path.join(T, 'patterns', f))
+    dossier_sections = os.path.join(T, 'contenu', 'sections')
+    if os.path.isdir(dossier_sections):
+        shutil.rmtree(dossier_sections)
     for cle, (libelle, page, blocs) in sections.items():
         ecrire(os.path.join(T, 'contenu', 'sections', cle + '.html'), blocs + '\n')
         nom = libelle[0].upper() + libelle[1:].lower()
