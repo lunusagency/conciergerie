@@ -22,13 +22,19 @@ function homea_envoyer( $a, $sujet, $texte, $repondre = '', $pj = array() ) {
 	$nom = function () {
 		return 'HOMËA Conciergerie';
 	};
+	$exp = function ( $defaut ) {
+		$e = homea_reglages()['expediteur'];
+		return is_email( $e ) ? $e : $defaut;
+	};
 	add_filter( 'wp_mail_from_name', $nom );
+	add_filter( 'wp_mail_from', $exp );
 	$entetes = array( 'Content-Type: text/plain; charset=UTF-8' );
 	if ( $repondre && is_email( $repondre ) ) {
 		$entetes[] = 'Reply-To: ' . $repondre;
 	}
 	$ok = wp_mail( $a, $sujet, $texte, $entetes, $pj );
 	remove_filter( 'wp_mail_from_name', $nom );
+	remove_filter( 'wp_mail_from', $exp );
 	return $ok;
 }
 

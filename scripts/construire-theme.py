@@ -226,8 +226,12 @@ def convertir(n):
         boutons = []
         for a in n.elements():
             ba = {'className': ' '.join(a.classes)}
-            boutons.append('<!-- wp:button%s -->\n<div class="wp-block-button %s"><a class="wp-block-button__link wp-element-button" href="%s">%s</a></div>\n<!-- /wp:button -->' % (
-                attrs_json(ba), ' '.join(a.classes), esc_attr(lien(a.attrs['href'])), interieur(a)))
+            # ouverture dans un nouvel onglet : linkTarget et rel sont lus dans le HTML du bloc
+            cible = ''
+            if a.attrs.get('target'):
+                cible = ' target="%s" rel="%s"' % (esc_attr(a.attrs['target']), esc_attr(a.attrs.get('rel', 'noreferrer noopener')))
+            boutons.append('<!-- wp:button%s -->\n<div class="wp-block-button %s"><a class="wp-block-button__link wp-element-button" href="%s"%s>%s</a></div>\n<!-- /wp:button -->' % (
+                attrs_json(ba), ' '.join(a.classes), esc_attr(lien(a.attrs['href'])), cible, interieur(a)))
         return '<!-- wp:buttons%s -->\n<div class="%s">%s</div>\n<!-- /wp:buttons -->' % (
             attrs_json({'className': ' '.join(cls)}), classe(n, 'wp-block-buttons'), ''.join(boutons))
 

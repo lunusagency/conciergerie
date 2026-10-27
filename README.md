@@ -14,7 +14,7 @@ Le mot « gestion » n'apparaît nulle part sur le site, comme demandé.
 |---|---|---|
 | Accueil | `/` | Maquette de référence : héros avec diaporama (01 · 02 · 03), mission, trois piliers, territoire, Nina, pied de page marron |
 | Nos services | `/nos-services/` | Accompagnement à l'année (6 services), prestations ponctuelles, voyageurs, méthode en 4 étapes |
-| Nos propriétés | `/nos-proprietes/` | Une seule propriété avec ses photos, caractéristiques et équipements |
+| Nos propriétés | `/nos-proprietes/` | La Villa Nantaise (annonce Airbnb du client) : 5 photos, caractéristiques, équipements, bouton « Réserver sur Airbnb » |
 | À propos | `/a-propos/` | La création de la marque : naissance, nom et emblème, palette et matières, valeurs, positionnement |
 | Contact | `/contact/` | Prise de rendez-vous téléphonique (créneaux libres) et formulaire de contact |
 
@@ -55,14 +55,14 @@ Ne jamais committer ces accès.
 
 Le visiteur choisit un jour, puis une heure libre, puis laisse ses coordonnées. Le créneau disparaît aussitôt pour les autres visiteurs.
 
-- **Réglages** : wp-admin → **HOMËA → Disponibilités** : horaires de chaque jour (plusieurs plages possibles), durée d'un créneau (30 min par défaut), délai minimum, horizon de réservation, jours de fermeture ou congés, adresse qui reçoit les demandes.
+- **Réglages** : wp-admin → **HOMËA → Disponibilités** : horaires de chaque jour (plusieurs plages possibles), durée d'un créneau (30 min par défaut), délai minimum, horizon de réservation, jours de fermeture ou congés, adresse qui reçoit les demandes, adresse d'envoi des e-mails.
 - **Horaires par défaut** : du lundi au jeudi 9 h–12 h 30 et 14 h–18 h 30, le vendredi jusqu'à 18 h, le samedi 9 h 30–12 h 30, fermé le dimanche. À ajuster selon les disponibilités réelles de Nina.
-- **À chaque réservation** : un e-mail à `contact@homea-conciergerie.fr`, avec le rendez-vous en pièce jointe (.ics) pour l'ajouter à l'agenda d'un clic ; une confirmation au client.
+- **À chaque réservation** : un e-mail à `contact.homeaconciergerie@gmail.com`, avec le rendez-vous en pièce jointe (.ics) pour l'ajouter à l'agenda d'un clic ; une confirmation au client.
 - **Suivi** : HOMËA → Rendez-vous (et un encart « Prochains rendez-vous » sur le tableau de bord). Mettre un rendez-vous à la corbeille libère le créneau.
 - **Messages** du formulaire de contact : HOMËA → Messages, et par e-mail.
 - **Anti-spam** : champ piège invisible, délai minimum de saisie, accord obligatoire, limite d'envois par adresse IP.
 
-> L'envoi des e-mails passe par la messagerie de l'hébergeur (`wp_mail`). Si les e-mails n'arrivent pas, installer une extension SMTP (par exemple WP Mail SMTP) avec la boîte `contact@homea-conciergerie.fr`.
+> L'envoi des e-mails passe par la messagerie de l'hébergeur (`wp_mail`), avec `contact@homea-conciergerie.fr` comme expéditeur : ce domaine a ses enregistrements SPF et DKIM chez Hostinger, contrairement à `homea-conciergerie.com`, qui n'a pas de messagerie. Si les e-mails n'arrivent toujours pas, installer une extension SMTP (par exemple WP Mail SMTP) avec la boîte `contact@homea-conciergerie.fr`.
 
 ## Direction artistique
 
@@ -101,7 +101,7 @@ Rendez-vous testés : réservation, double réservation refusée (409), dimanche
 Comme l'indique le brief (section 07), ces éléments sont rédigés au plus juste mais doivent être confirmés :
 
 - **Prestations** : liste des services à l'année et ponctuels (page Nos services).
-- **Propriété** : « Villa des Oliviers » est un exemple. Nom, lieu, capacité (8 voyageurs, 4 chambres, 3 salles de bain), équipements et photos sont à remplacer par le vrai bien, avec l'accord du propriétaire.
+- **Propriété** : la Villa Nantaise reprend l'annonce Airbnb du client (texte, capacité, équipements, 5 photos légèrement réchauffées). L'accord du propriétaire pour cette diffusion est à confirmer.
 - **Photos** : les visuels viennent de la maquette de référence et des mockups de la marque (agrandis et retouchés : la baseline affiche « CONCIERGERIE » seule, comme retenu au brief). Les remplacer par de vraies photos se fait en un clic dans l'éditeur.
 - **Photo du port de Pornic** (accueil) : Kev22, licence CC BY-SA 4.0 (Wikimedia Commons), légèrement réchauffée ; le crédit est affiché en bas du pied de page, il doit y rester tant que la photo est utilisée.
 - **À propos** : le texte sur la naissance de la marque et la lecture du monogramme (deux arches, l'étoile de l'accueil).

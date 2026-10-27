@@ -29,7 +29,10 @@ function homea_reglages_defaut() {
 		'horizon'     => 21,
 		'delai'       => 3,
 		'fermetures'  => '',
-		'destinataire' => 'contact@homea-conciergerie.fr',
+		'destinataire' => 'contact.homeaconciergerie@gmail.com',
+		// adresse d'envoi : un domaine dont la messagerie est configurée (SPF,
+		// DKIM), sinon Gmail et les autres messageries rejettent les e-mails
+		'expediteur'   => 'contact@homea-conciergerie.fr',
 	);
 }
 
@@ -111,6 +114,7 @@ function homea_nettoyer_reglages( $v ) {
 	$out['delai']        = max( 0, min( 168, (int) ( $v['delai'] ?? $d['delai'] ) ) );
 	$out['fermetures']   = sanitize_textarea_field( $v['fermetures'] ?? '' );
 	$out['destinataire'] = is_email( $v['destinataire'] ?? '' ) ? sanitize_email( $v['destinataire'] ) : $d['destinataire'];
+	$out['expediteur']   = is_email( $v['expediteur'] ?? '' ) ? sanitize_email( $v['expediteur'] ) : $d['expediteur'];
 	return $out;
 }
 
@@ -171,6 +175,11 @@ function homea_page_reglages() {
 				<tr>
 					<th scope="row"><label for="homea-destinataire">Adresse qui reçoit les demandes</label></th>
 					<td><input type="email" class="regular-text" id="homea-destinataire" name="<?php echo esc_attr( $champ ); ?>[destinataire]" value="<?php echo esc_attr( $r['destinataire'] ); ?>"></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="homea-expediteur">Adresse d'envoi des e-mails</label></th>
+					<td><input type="email" class="regular-text" id="homea-expediteur" name="<?php echo esc_attr( $champ ); ?>[expediteur]" value="<?php echo esc_attr( $r['expediteur'] ); ?>">
+					<p class="description">Doit appartenir à un domaine dont la messagerie est configurée chez l'hébergeur (ici homea-conciergerie.fr), sinon les e-mails risquent d'être rejetés.</p></td>
 				</tr>
 			</table>
 			<?php submit_button( 'Enregistrer les disponibilités' ); ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Presqu’île guérandaise (Nos propriétés)
+ * Title: Nantes (Nos propriétés)
  * Slug: homea/section-fiche-infos
  * Categories: homea
  * Inserter: true

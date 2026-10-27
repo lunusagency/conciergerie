@@ -680,7 +680,7 @@ main > .bandeau-appel:last-child { margin-bottom: 0; }
 /* Fiche d'une propriété */
 .galerie {
   display: grid;
-  grid-template-columns: 1.85fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
   height: clamp(420px, 46vw, 700px);
@@ -831,7 +831,7 @@ main > .bandeau-appel:last-child { margin-bottom: 0; }
   .editorial-texte { padding-right: 0; margin-bottom: 36px; }
   .attentions { grid-template-columns: 1fr; }
   .etapes { grid-template-columns: 1fr 1fr; row-gap: 40px; }
-  .galerie { height: 110vw; max-height: 720px; grid-template-columns: 1fr 1fr; grid-template-rows: 1.6fr 1fr; padding-left: 0; }
+  .galerie { height: 150vw; max-height: 1080px; grid-template-columns: 1fr 1fr; grid-template-rows: 1.6fr 1fr 1fr; padding-left: 0; }
   .galerie figure:first-child { grid-row: auto; grid-column: 1 / -1; }
   .caracteristiques { grid-template-columns: 1fr 1fr; }
   .carac:nth-child(3) { padding-left: 0; border-left: 0; }

@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       HOMËA Contact & Rendez-vous
  * Description:       Formulaire de contact et réservation de créneaux d'appel selon les disponibilités, pour le site HOMËA Conciergerie. Shortcodes : [homea_rendez_vous] et [homea_contact].
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            HOMËA Conciergerie
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'HOMEA_CONTACT_VERSION', '1.0.0' );
+define( 'HOMEA_CONTACT_VERSION', '1.1.0' );
 define( 'HOMEA_CONTACT_DIR', plugin_dir_path( __FILE__ ) );
 define( 'HOMEA_CONTACT_URL', plugin_dir_url( __FILE__ ) );
 
