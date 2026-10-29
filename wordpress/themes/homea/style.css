@@ -3,7 +3,7 @@ Theme Name: HOMËA
 Theme URI: https://homea-conciergerie.fr
 Author: HOMËA Conciergerie
 Description: Thème bloc sur mesure de HOMËA Conciergerie — l’art de prendre soin des lieux et de ceux qui les habitent. Toutes les pages sont composées de blocs natifs, modifiables dans l’éditeur.
-Version: 1.2.0
+Version: 1.3.0
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
@@ -737,6 +737,9 @@ main > .bandeau-appel:last-child { margin-bottom: 0; }
   text-transform: uppercase;
   color: var(--taupe);
 }
+.caracteristiques.carac-cinq { grid-template-columns: repeat(5, auto); }
+.carac-cinq .carac { padding-right: clamp(14px, 1.7vw, 26px); padding-left: clamp(14px, 1.7vw, 26px); }
+.carac-cinq .carac:first-child { padding-left: 0; }
 .fiche-cote .surtitre::after { display: none; }
 .fiche-cote .liste-filets { margin-top: 18px; }
 .equipements { margin: 18px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--filet); }
@@ -854,6 +857,8 @@ main > .bandeau-appel:last-child { margin-bottom: 0; }
   .caracteristiques { grid-template-columns: 1fr 1fr; }
   .carac:nth-child(3) { padding-left: 0; border-left: 0; }
   .carac:nth-child(n+3) { border-top: 1px solid var(--filet); }
+  .caracteristiques.carac-cinq { grid-template-columns: 1fr 1fr; }
+  .carac-cinq .carac:nth-child(odd) { padding-left: 0; border-left: 0; }
   .nuancier { grid-template-columns: repeat(3, 1fr); row-gap: 28px; }
   .liste-filets .ligne { grid-template-columns: 1fr; gap: 6px; }
   .trio.trio-quatre { grid-template-columns: 1fr; }

@@ -164,7 +164,7 @@ function homea_installer() {
 	update_option( 'show_on_front', 'page' );
 	update_option( 'page_on_front', $pages['accueil'] );
 	update_option( 'blogname', 'HOMËA Conciergerie' );
-	update_option( 'blogdescription', 'L’art de prendre soin des lieux et de ceux qui les habitent.' );
+	update_option( 'blogdescription', 'L’art de prendre soin de votre bien.' );
 	if ( ! empty( $medias['icone-homea'] ) ) {
 		update_option( 'site_icon', $medias['icone-homea'] );
 	}

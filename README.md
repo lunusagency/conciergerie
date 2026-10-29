@@ -14,7 +14,7 @@ Le mot « gestion » n'apparaît nulle part sur le site, comme demandé.
 |---|---|---|
 | Accueil | `/` | Maquette de référence : héros avec diaporama (01 · 02 · 03), mission, trois piliers, territoire, Nina, pied de page marron |
 | Nos services | `/nos-services/` | Accompagnement à l'année (6 services), prestations ponctuelles, voyageurs, méthode en 4 étapes |
-| Nos propriétés | `/nos-proprietes/` | La Villa Nantaise (annonce Airbnb du client) : 5 photos, caractéristiques, équipements, bouton « Réserver sur Airbnb » |
+| Nos propriétés | `/nos-proprietes/` | La Villa Nantaise, avec les textes fournis par le client : 5 photos, description, caractéristiques, équipements, accueil HOMËA, Nantes, boutons « Réserver sur Airbnb » |
 | À propos | `/a-propos/` | La création de la marque : naissance, nom et emblème, palette et matières, valeurs, positionnement |
 | Contact | `/contact/` | Prise de rendez-vous téléphonique (créneaux libres) et formulaire de contact |
 
@@ -101,7 +101,7 @@ Rendez-vous testés : réservation, double réservation refusée (409), dimanche
 Comme l'indique le brief (section 07), ces éléments sont rédigés au plus juste mais doivent être confirmés :
 
 - **Prestations** : liste des services à l'année et ponctuels (page Nos services).
-- **Propriété** : la Villa Nantaise reprend l'annonce Airbnb du client (texte, capacité, équipements, 5 photos légèrement réchauffées). L'accord du propriétaire pour cette diffusion est à confirmer.
+- **Propriété** : la Villa Nantaise reprend les textes fournis par le client et 5 photos de son annonce Airbnb, légèrement réchauffées. La piscine est chauffée, pas à l'eau salée.
 - **Photos** : les visuels viennent de la maquette de référence et des mockups de la marque (agrandis et retouchés : la baseline affiche « CONCIERGERIE » seule, comme retenu au brief). Les remplacer par de vraies photos se fait en un clic dans l'éditeur.
 - **Photo du port de Pornic** (accueil) : Kev22, licence CC BY-SA 4.0 (Wikimedia Commons), légèrement réchauffée ; le crédit est affiché en bas du pied de page, il doit y rester tant que la photo est utilisée.
 - **À propos** : le texte sur la naissance de la marque et la lecture du monogramme (deux arches, l'étoile de l'accueil).
